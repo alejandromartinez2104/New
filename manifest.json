@@ -1,15 +1,21 @@
 {
-    "name": "For Amberly",
-    "short_name": "Amberly",
-    "start_url": "/",
-    "display": "standalone",
-    "background_color": "#ffd1dc",
-    "theme_color": "#ff6b81",
-    "icons": [
-        {
-            "src": "frame2.png",
-            "sizes": "192x192",
-            "type": "image/png"
-        }
-    ]
+  "name": "For Amberly",
+  "short_name": "Amberly",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#ffd1dc",
+  "theme_color": "#ff6b81",
+  "icons": [
+    {
+      "src": "frame2.png",
+      "sizes": "192x192",
+      "type": "image/png"
+    },
+    {
+      "src": "frame2.png",
+      "sizes": "512x512",
+      "type": "image/png"
+    }
+  ]
 }
+
