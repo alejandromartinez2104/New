@@ -1,123 +1,31 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-    <title>Envelope Animation</title>
-    <style>
-        :root {
-            --color-env: #FFB7C5;
-            --color-env2: #ff9aad;
-            --color-flap: #ff8da1;
-        }
-
-        body {
-            background-color: #ffd1dc;
-            text-align: center;
-            font-family: sans-serif;
-            margin: 0;
-            padding: 0;
-            overflow: hidden;
-            font-weight: bold;
-            color: #8b0046;
-            background-image: url("tulips.png");
-            background-repeat: repeat;
-            background-size: 100px;
-        }
-
-        .countdown-container {
-            position: absolute;
-            top: 10px;
-            right: 10px;
-            font-size: 14px;
-            font-weight: bold;
-            color: #8b0046;
-        }
-
-        .envelope-wrapper {
-            position: absolute;
-            top: 40%;
-            left: 50%;
-            transform: translate(-50%, -50%);
-        }
-
-        #envelope {
-            position: relative;
-            width: 280px;
-            height: 180px;
-            border-bottom-left-radius: 6px;
-            border-bottom-right-radius: 6px;
-            background-color: var(--color-flap);
-            box-shadow: 0 4px 20px rgba(0,0,0,.1);
-            cursor: pointer;
-            animation: float 2s infinite alternate ease-in-out;
-        }
-
-        @keyframes float {
-            from {
-                transform: translate(-50%, -50%) translateY(0px);
-            }
-            to {
-                transform: translate(-50%, -50%) translateY(-10px);
-            }
-        }
-
-        .front {
-            position: absolute;
-            width: 0;
-            height: 0;
-            z-index: 3;
-        }
-
-        .flap {
-            border-left: 140px solid transparent;
-            border-right: 140px solid transparent;
-            border-bottom: 82px solid transparent;
-            border-top: 98px solid var(--color-flap);
-            transform-origin: top;
-        }
-
-        .pocket {
-            border-left: 140px solid var(--color-env);
-            border-right: 140px solid var(--color-env);
-            border-bottom: 90px solid var(--color-env2);
-            border-top: 90px solid transparent;
-            border-bottom-left-radius: 6px;
-            border-bottom-right-radius: 6px;
-        }
-
-        .letter {
-            position: relative;
-            background-color: white;
-            width: 90%;
-            margin: 0 auto;
-            height: 90%;
-            top: 5%;
-            border-radius: 6px;
-            box-shadow: 0 2px 26px rgba(0,0,0,.08);
-        }
-
-        .hidden {
-            display: none;
-        }
-
-        footer {
-            position: absolute;
-            bottom: 10px;
-            width: 100%;
-            font-size: 12px;
-            color: #8b0046;
-        }
-    </style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>For Amberly</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="manifest" href="manifest.json">
 </head>
 <body>
     <div class="countdown-container">
         <span id="countdown"></span>
     </div>
 
-    <div class="envelope-wrapper">
+    <div id="envelope-container">
         <div id="envelope" onclick="openEnvelope()">
             <div class="front flap"></div>
             <div class="front pocket"></div>
-            <div class="letter"></div>
+            <div class="hearts">
+                <div class="heart a1"></div>
+                <div class="heart a2"></div>
+                <div class="heart a3"></div>
+            </div>
+            <div class="sparkles">
+                <div class="sparkle s1"></div>
+                <div class="sparkle s2"></div>
+                <div class="sparkle s3"></div>
+            </div>
         </div>
     </div>
 
@@ -127,7 +35,7 @@
                 <span id="days-left"></span>
             </div>
             <div class="cat">
-                <img src="cat.png" alt="Cute cat peeking">
+                <img src="/placeholder.svg?height=150&width=150" alt="Cute cat peeking">
             </div>
             <p id="message-text"></p>
             <p class="footer">For Amberly <br> from Alej</p>
@@ -136,19 +44,7 @@
 
     <footer>This site was created exclusively for Amberly</footer>
 
-    <script>
-        document.addEventListener("DOMContentLoaded", () => {
-            updateCountdown();
-            checkMessage();
-        });
-
-        function openEnvelope() {
-            document.getElementById("envelope").style.display = "none";
-            document.getElementById("message-container").classList.remove("hidden");
-            setTimeout(() => {
-                document.querySelector(".message-box").classList.add("show");
-            }, 100);
-        }
-    </script>
+    <script src="script.js"></script>
 </body>
 </html>
+
